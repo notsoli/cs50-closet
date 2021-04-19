@@ -1,0 +1,20 @@
+cs50-closet
+
+-----DEPENDENCIES-----
+jinja2 (pip install jinja2)
+Flask (pip install Flask)
+
+-----main.py-----
+main file that handles everything Flask-related
+
+-----backend.py-----
+handles backend stuff (database stuff,
+verification, everything not in main)
+
+-----layout-----
+mostly custom css, some bootstrap maybe (sam please help me with this one)
+
+-----error handling-----
+return boolean & string
+* bool is if error happened or not
+* sring is for error message ('OK' if no error)
