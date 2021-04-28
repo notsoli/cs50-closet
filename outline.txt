@@ -1,7 +1,6 @@
 cs50-closet
 
 -----DEPENDENCIES-----
-jinja2 (pip install jinja2)
 Flask (pip install Flask)
 
 -----main.py-----
@@ -18,3 +17,13 @@ mostly custom css, some bootstrap maybe (sam please help me with this one)
 return boolean & string
 * bool is if error happened or not
 * sring is for error message ('OK' if no error)
+
+-----database-----
+table 1: entries
+    id INT PRIMARY AUTOINCREMENT
+    name TEXT
+    photo FILE
+
+table 2: items
+    entry_id INT PRIMARY
+    name TEXT
