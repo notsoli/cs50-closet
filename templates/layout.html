@@ -1,7 +1,28 @@
 <!DOCTYPE html>
 <html>
-<title>{% block title %}{% endblock %}</title>
+  <head>
+    <title>{% block title %}{% endblock %}</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/reset.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/layout.css') }}">
+  </head>
 <body>
+  <nav id="site_nav">
+    <ul>
+      <li id="nav_title"><a href="/">Closet</a></li>
+      <li><a href="/latest">Latest</a></li>
+      <li><a href="/earliest">Earliest</a></li>
+      <li><a href="/random">Random</a></li>
+      <li><a href="/about">About</a></li>
+    </ul>
+  </nav>
+  <main>
     {% block content %}{% endblock %}
+  </main>
+  <footer>
+    <p>&copy; 2021 Nate and Sam Randa</p>
+  </footer>
 </body>
+</html>
 </html>
