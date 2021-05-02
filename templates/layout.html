@@ -2,6 +2,17 @@
 <html>
 <title>{% block title %}{% endblock %}</title>
 <body>
+  <nav>
+    <ul>
+      <li id="nav_title"><a href="/">Closet</a></li>
+      <li><a href="/latest">Latest</a></li>
+      <li><a href="/earliest">Earliest</a></li>
+      <li><a href="/random">Random</a></li>
+      <li><a href="/about">About</a></li>
+    </ul>
+  </nav>
+  <main>
     {% block content %}{% endblock %}
+  </main>
 </body>
 </html>
