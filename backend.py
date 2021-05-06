@@ -5,22 +5,27 @@ def initialize_database():
     global conn
     conn = sqlite3.connect('database.db')
     c = conn.cursor()
-    c.exeute('''CREATE TABLE IF NOT EXISTS entries(
-        id INT PRIMARY AUTOINCREMENT,
+    c.execute('''CREATE TABLE IF NOT EXISTS entries(
+        id INTEGER PRIMARY KEY AUTOINCREMENT,
         name TEXT,
-        photo_path TEXT,
+        link TEXT
         )''')
     c.execute('''CREATE TABLE IF NOT EXISTS items(
-        id INT PRIMARY
+        id INT,
         name TEXT
         )''')
     conn.commit()
     return True, "OK"
 
-def add_item(name, items, photo_path):
-    c.execute("INSERT INTO entries(name, photo_path) VALUES(?,?)", name, photo_path)
-    response = c.execute("SELECT id FROM entries WHERE name=?", name)
-    id = response[0]
+def add_item(name, items, link):
+    c.execute("INSERT INTO entries(name, link) VALUES(?,?)", (name, link))
+    entry_id = c.lastrowid
     for item in items:
-        c.execute("INSERT INTO items VALUES(?,?)", id, item)
-    return True, "OK"
+        c.execute("INSERT INTO items VALUES(?,?)", (entry_id, item))
+    conn.commit()
+
+def query_entries():
+    response = c.execute("SELECT * FROM entries")
+
+initialize_database()
+query_entries()
