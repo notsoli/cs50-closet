@@ -25,7 +25,8 @@ def add_item(name, items, link):
     conn.commit()
 
 def query_entries():
-    response = c.execute("SELECT * FROM entries")
+    c.execute("SELECT * FROM entries")
+    print(c.fetchall())
 
 initialize_database()
 query_entries()
