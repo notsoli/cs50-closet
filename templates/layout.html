@@ -4,6 +4,7 @@
     <title>{% block title %}{% endblock %}</title>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    {% block links %}{% endblock %}
     <link rel="stylesheet" href="{{ url_for('static', filename='css/reset.css') }}">
     <link rel="stylesheet" href="{{ url_for('static', filename='css/layout.css') }}">
   </head>
@@ -15,6 +16,7 @@
       <li><a href="/earliest">Earliest</a></li>
       <li><a href="/random">Random</a></li>
       <li><a href="/about">About</a></li>
+      <li><a href="/upload">Upload</a></li>
     </ul>
   </nav>
   <main>
