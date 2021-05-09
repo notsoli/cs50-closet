@@ -1,0 +1,47 @@
+/* main */
+
+main {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* form */
+
+#upload_form {
+  width: 300px;
+}
+
+.form_section {
+  margin-bottom: 15px;
+  display: flex;
+  flex-direction: column;
+}
+
+.form_section > * {
+  margin-bottom: 5px;
+}
+
+#form_items > *:not(:last-child) {
+  margin-bottom: 5px;
+}
+
+.form_item {
+  display: flex;
+  flex-direction: row;
+}
+
+.upload_item {
+  flex-grow: 1;
+  margin-right: 5px;
+  min-width: 0; /* why do i need this??? */
+}
+
+.item_remove {
+  width: 34px;
+  height: 34px;
+}
+
+#upload_error {
+  height: 16px;
+}

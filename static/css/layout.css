@@ -30,6 +30,19 @@
   font-family: "Poppins";
 }
 
+input {
+  border: 2px solid black;
+  padding: 5px;
+}
+
+button {
+  border: none;
+  padding: 7px;
+  color: white;
+  background-color: black;
+  cursor: pointer;
+}
+
 /* structure */
 
 html, body {

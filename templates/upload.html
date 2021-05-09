@@ -1,6 +1,39 @@
 {% extends "layout.html" %}
+
 {% block title %}Upload{% endblock %}
 
+{% block links %}
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/upload.css') }}">
+  <script src="{{ url_for('static', filename='js/upload.js') }}"></script>
+{% endblock %}
+
 {% block content %}
-    test
+    <div id="upload_form">
+      <div class="form_section">
+        <p class="form_label">Authentication:</p>
+        <input id="upload_name" type="text" name="upload_name" placeholder="Name">
+        <input id="upload_pass" type="password" name="upload_pass" placeholder="Password">
+      </div>
+      <div class="form_section">
+        <p class="form_label">Information:</p>
+        <input id="upload_image" type="text" name="upload_image" placeholder="Image Link">
+        <input id="upload_date" type="date" name="upload_date">
+      </div>
+      <div class="form_section">
+        <p class="form_label">Items:</p>
+        <div id="form_items">
+          <div class="form_item">
+            <input class="upload_item" type="text" name="upload_item" placeholder="Item">
+            <button class="item_remove">x</button>
+          </div>
+        </div>
+        <button id="item_add">Add Item</button>
+      </div>
+      <div class="form_section">
+        <p id="upload_error"></p>
+      </div>
+      <div class="form_section">
+        <button id="upload_submit">Submit</button>
+      </div>
+    </div>
 {% endblock %}

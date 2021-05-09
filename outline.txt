@@ -12,6 +12,7 @@ verification, everything not in main)
 
 -----layout-----
 mostly custom css, some bootstrap maybe (sam please help me with this one)
+TODO: make date default to current date (i think js can do this)
 
 -----error handling-----
 return boolean & string
