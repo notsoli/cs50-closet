@@ -18,12 +18,10 @@ function init() {
   dom.uploadImage = document.querySelector("#upload_image")
   dom.uploadDate = document.querySelector("#upload_date")
 
-  // add event listener for initial remove button
+  // add event listeners
   const itemRemove = document.querySelector(".item_remove")
   itemRemove.addEventListener('click', removeItem)
-
   dom.itemAdd.addEventListener('click', addItem)
-
   dom.uploadSubmit.addEventListener('click', upload)
 }
 
