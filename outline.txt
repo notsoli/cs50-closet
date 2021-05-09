@@ -28,3 +28,22 @@ table 1: entries
 table 2: items
     entry_id INT PRIMARY
     name TEXT
+
+-----program code requirement-----
+1. Instructions for input
+  not done, but would be in index.html (the user)
+
+2. Use of at least one list
+  done, upload() in upload.js
+
+3. At least one procedure that contributes to the program’s intended purpose (etc.)
+  not done, would be easy given 4
+
+4. An algorithm that includes sequencing, selection, and iteration
+  not done, i could easily do this in a sorting function
+
+5. Calls to your student-developed procedure
+  not done, would be easy given 4
+
+6. Instructions for output
+  not done, but would be in index.html (the user)
