@@ -1,4 +1,5 @@
 import sqlite3
+import random
 
 # Create cursor/database & make tables if they don't exist yet
 def initialize_database():
@@ -18,7 +19,6 @@ def initialize_database():
         name TEXT
         )''')
     conn.commit()
-    return True, "OK"
 
 # Adds entry/photo to entries table and all the items to the items table
 def add_item(name, items, link):
@@ -28,10 +28,37 @@ def add_item(name, items, link):
         c.execute("INSERT INTO items VALUES(?,?)", (entry_id, item))
     conn.commit()
 
-# returns every item in a list
-def query_entries(table):
-    c.execute(f"SELECT * FROM {table}")
-    return c.fetchall()
+def query_entries(sort):
+    c.execute("SELECT * FROM entries")
+    entries = c.fetchall()
+    c.execute("SELECT * FROM items")
+    items = c.fetchall()
+    entry_list = []
+    for entry in entries:
+        entry = list(entry)
+        entry_id = entry[0]
+        item_list = []
+        for item in items:
+            if item[0] == entry_id:
+                item = list(item)
+                item_list.append(item[1])
+        entry.append(item_list)
+        entry_list.append(entry)
+    
+    if sort == "none":
+        return entry_list
+    elif sort == "earliest":
+        return entry_list[0]
+    elif sort == "latest":
+        return entry_list[-1]
+    elif sort == "random":
+        random.shuffle(entry_list)
+        return entry_list
+    else:
+        return "yes"
 
 initialize_database()
-print(query_entries("entries"))
+
+# Populates database
+# for i in range(10):
+#    add_item(str(i),[f"shirt{i}", f"pants{i}"], f"link{i}")
