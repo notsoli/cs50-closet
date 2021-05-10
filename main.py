@@ -1,4 +1,4 @@
-from flask import Flask, render_template, url_for, redirect
+from flask import Flask, render_template, url_for, redirect, request
 import backend
 
 app = Flask(__name__)
@@ -28,7 +28,12 @@ def upload():
     if request.method == 'POST':
         return render_template('upload.html')
     else:
-        return render_template('upload.html')
+        name = request.form["name"]
+        image = request.form["image"]
+        items = request.form["items"]
+        print(items)
+        backend.add_item(name, items, image)
+        return redirect(url_for('home'))
 
 if __name__ == '__main__':
     app.run(debug=True)

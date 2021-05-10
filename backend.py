@@ -18,17 +18,22 @@ def initialize_database():
         id INT,
         name TEXT
         )''')
+    return c, conn
     conn.commit()
+    conn.close()
 
 # Adds entry/photo to entries table and all the items to the items table
 def add_item(name, items, link):
+    c, conn = initialize_database()
     c.execute("INSERT INTO entries(name, link) VALUES(?,?)", (name, link))
     entry_id = c.lastrowid
     for item in items:
         c.execute("INSERT INTO items VALUES(?,?)", (entry_id, item))
     conn.commit()
+    conn.close()
 
 def query_entries(sort):
+    c, conn = initialize_database()
     c.execute("SELECT * FROM entries")
     entries = c.fetchall()
     c.execute("SELECT * FROM items")
@@ -56,8 +61,8 @@ def query_entries(sort):
         return entry_list
     else:
         return "yes"
-
-initialize_database()
+    conn.commit()
+    conn.close()
 
 # Populates database
 # for i in range(10):

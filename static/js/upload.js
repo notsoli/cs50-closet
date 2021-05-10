@@ -66,7 +66,6 @@ function upload() {
   authForm.append("name", dom.uploadName.value)
   authForm.append("pass", dom.uploadPass.value)
   authForm.append("image", dom.uploadImage.value)
-  authForm.append("date", dom.uploadDate.value)
 
   // create list of items
   const items = []
