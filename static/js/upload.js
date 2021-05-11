@@ -14,9 +14,7 @@ function init() {
   dom.uploadError = document.querySelector("#upload_error")
 
   dom.uploadName = document.querySelector("#upload_name")
-  dom.uploadPass = document.querySelector("#upload_pass")
   dom.uploadImage = document.querySelector("#upload_image")
-  dom.uploadDate = document.querySelector("#upload_date")
 
   // add event listener for initial remove button
   const itemRemove = document.querySelector(".item_remove")
@@ -52,9 +50,7 @@ function removeItem() {
 function upload() {
   // verify each input is filled
   if (dom.uploadName.value == "" ||
-    dom.uploadPass.value == "" ||
-    dom.uploadImage.value == "" ||
-    dom.uploadDate.value == "") {
+    dom.uploadImage.value == "") {
       dom.uploadError.innerHTML = "Please complete all inputs."
       return
     }
