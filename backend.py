@@ -59,10 +59,6 @@ def query_entries(sort):
     elif sort == "random":
         random.shuffle(entry_list)
         return entry_list
-    else:
-        return "yes"
-    conn.commit()
-    conn.close()
 
 # Populates database
 # for i in range(10):

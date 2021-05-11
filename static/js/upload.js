@@ -64,7 +64,6 @@ function upload() {
 
   // append information to form data
   authForm.append("name", dom.uploadName.value)
-  authForm.append("pass", dom.uploadPass.value)
   authForm.append("image", dom.uploadImage.value)
 
   // create list of items

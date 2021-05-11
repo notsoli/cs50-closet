@@ -26,14 +26,13 @@ def about():
 @app.route('/upload', methods=['POST', 'GET'])
 def upload():
     if request.method == 'POST':
-        return render_template('upload.html')
-    else:
         name = request.form["name"]
         image = request.form["image"]
-        items = request.form["items"]
-        print(items)
+        items = request.form["items"].split(',')
         backend.add_item(name, items, image)
         return redirect(url_for('home'))
+    else:
+        return render_template('upload.html')
 
 if __name__ == '__main__':
     app.run(debug=True)
